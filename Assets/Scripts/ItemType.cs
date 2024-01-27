@@ -1,8 +1,9 @@
 
 public enum ItemType
 {
-HAMMER,
-SEMAVER,
-PILLS,
-NOITEM
+    HAMMER,
+    SEMAVER,
+    PILLS,
+    BABY,
+    NOITEM
 }
