@@ -12,6 +12,9 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI patientStoryText;
     // Start is called before the first frame update
 
+    [Header("Item Name Text")]
+    public TextMeshProUGUI itemText;
+
     private Action OnProblemSolved;
 
     private void Start()
@@ -33,7 +36,7 @@ public class UIManager : MonoBehaviour
 
     public void HideTextWithAction()
     {
-        patientStoryBubble.transform.DOScale(Vector3.zero, 0.3f).OnComplete(()=> OnProblemSolved?.Invoke());
+        patientStoryBubble.transform.DOScale(Vector3.zero, 0.3f).OnComplete(() => OnProblemSolved?.Invoke());
     }
 
     public void ShowProblemSolvedBubble(string thanksString, Action problemSolvedAction)
@@ -42,5 +45,10 @@ public class UIManager : MonoBehaviour
         patientStoryText.text = thanksString;
         patientStoryBubble.transform.DOScale(Vector3.one, 0.3f).SetEase(Ease.InBounce);
         Invoke("HideTextWithAction", 2f);
+    }
+
+    public void SetItemText(string itemName)
+    {
+        itemText.text = itemName;
     }
 }

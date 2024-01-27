@@ -19,6 +19,9 @@ public class PatientController : MonoBehaviour
     public string idleString;
     public string deadString = "isDead";
 
+    [Header("Rotating Object")]
+    public RotatingObjects rotationBehaviour;
+
     [Header("Patient Story")]
     public string story;
     public string thanksString;
@@ -120,6 +123,10 @@ public class PatientController : MonoBehaviour
 
     private IEnumerator WaitAndLeave()
     {
+        if (rotationBehaviour != null)
+        {
+            rotationBehaviour.StartRotatingBody();
+        }
         GameManager.Instance.uiManager.ShowBubbleText(thanksString);
         yield return new WaitForSeconds(2f);
         GoToExitPosition();
