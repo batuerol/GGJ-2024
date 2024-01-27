@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class DragByMouseClick : MonoBehaviour
 {
-    public GameObject body;
+    public PatientController patientController;
+
     private bool isDragging = false;
+
     private Camera mainCamera;
 
     void Start()
@@ -13,22 +15,37 @@ public class DragByMouseClick : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (patientController.patientServed)
+        {
+            return;
+        }
+        int centerX = Screen.width / 2;
+        int centerY = Screen.height / 2;
+
+        if (Input.GetMouseButton(0))
         {
             RaycastHit hit;
-            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+            //Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 5000f))
                 // Check if the hit object is this object
                 if (hit.collider.gameObject == gameObject)
-                    isDragging = !isDragging;
+                    isDragging = true;
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            if (isDragging)
+            {
+                isDragging = false;
+                patientController.CallThanksSequence();
+            }
         }
 
         // Move the object if dragging is true
         if (isDragging)
         {
-            Vector3 mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, mainCamera.WorldToScreenPoint(gameObject.transform.position).z);
-            Vector3 objPosition = mainCamera.ScreenToWorldPoint(mousePosition);
+            Vector3 mousePosition = new Vector3(centerX, centerY, Camera.main.WorldToScreenPoint(gameObject.transform.position).z);
+            Vector3 objPosition = Camera.main.ScreenToWorldPoint(mousePosition);
             transform.position = objPosition;
         }
     }

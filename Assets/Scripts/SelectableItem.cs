@@ -21,8 +21,6 @@ public class SelectableItem : MonoBehaviour
     public void DeselectItem()
     {
         selected = false;
-        //outlineReference.OutlineMode = 
-        //GetComponent<Outline>().enabled = false;
         outlineReference.OutlineWidth = 0f;
     }
 
