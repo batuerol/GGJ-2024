@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Props/hospital-bed.meta
+guid: ee96f0fbf0943c84bae9f8e09ff460fc
+folderAsset: yes
+========
 guid: 1b8d251f9af63b746bf2f7ffe00ebb9b
+>>>>>>>> c9723bfff5f416cc57b8da4bfad8774690813d8f:Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
