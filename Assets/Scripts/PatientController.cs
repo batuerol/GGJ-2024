@@ -20,24 +20,22 @@ public class PatientController : MonoBehaviour
 
     [Header("Patient Story")]
     public string story;
+    public string thanksString;
 
     public PatienteState state;
 
-    private void Start()
-    {
-        DisableAllBools();
-        state = PatienteState.DEFAULT;
-    }
+    public bool reachedDoctor = false;
+
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKey(KeyCode.A))
         {
-            GoToTargetPosition();
+            GoToDoctorPosition();
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            GoToExitTransform();
+            GoToExitPosition();
         }
 
         switch (state)
@@ -54,7 +52,16 @@ public class PatientController : MonoBehaviour
                 break;
         }
 
-        CheckReachDestination();
+        if (!reachedDoctor)
+        {
+            CheckReachDestinationForDoctor();
+        }
+        /*
+        else
+        {
+            CheckReachDestinationForExit();
+        }
+        */
     }
 
     public void DisableAllBools()
@@ -63,28 +70,57 @@ public class PatientController : MonoBehaviour
         animator.SetBool(deadString, false);
     }
 
-    public void GoToTargetPosition()
+    public void GoToDoctorPosition()
     {
-        agent.SetDestination(patientTargetTransform.position);
+        DisableAllBools();
+
         state = PatienteState.WALK;
+        agent.SetDestination(patientTargetTransform.position);
+        reachedDoctor = false;
     }
-    public void GoToExitTransform()
+    public void GoToExitPosition()
     {
         agent.SetDestination(patientExitTransform.position);
         state = PatienteState.WALK;
     }
 
-    public void CheckReachDestination()
+    public void OnPatientProblemSolved()
+    {
+        GameManager.Instance.uiManager.ShowProblemSolvedBubble(thanksString, GoToExitPosition);
+    }
+
+    public void CheckReachDestinationForDoctor()
     {
         if (!agent.pathPending)
         {
             if (agent.remainingDistance <= agent.stoppingDistance)
             {
-                if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
+                if (/*!agent.hasPath || agent.velocity.sqrMagnitude == 0.1f && */!reachedDoctor)
                 {
-                    // Done
+                    state = PatienteState.IDLE;
                     DisableAllBools();
                     GameManager.Instance.uiManager.ShowBubbleText(story);
+                    reachedDoctor = true;
+                    Debug.Log("ENTERED DOCTOR AREA");
+
+                }
+            }
+        }
+    }
+
+
+    public void CheckReachDestinationForExit()
+    {
+        if (!agent.pathPending)
+        {
+            if (agent.remainingDistance <= agent.stoppingDistance)
+            {
+                if (!agent.hasPath || agent.velocity.sqrMagnitude == 0.1f)
+                {
+                    // Done
+                    //agent.path = null;
+                    DisableAllBools();
+                    GameManager.Instance.CallNextPatient();
                 }
             }
         }

@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public UIManager uiManager;
+    public DoorAnimation doorAnimation;
 
     int currentPatientIndex = 0;
 
@@ -24,22 +25,25 @@ public class GameManager : MonoBehaviour
             Destroy(Instance);
         }
     }
+
+    private void Start()
+    {
+        CallNextPatient();
+    }
     // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void CallNextPatient()
     {
+        if (currentPatientIndex <= patientList.Count)
+        {
+            currentPatient = patientList[currentPatientIndex];
+            currentPatient.gameObject.SetActive(true);
+            currentPatient.GoToDoctorPosition();
+        }
+
+        /*
         currentPatient = patientList[currentPatientIndex];
         currentPatient.gameObject.SetActive(true);
         currentPatient.GoToTargetPosition();
+        */
     }
 }
