@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class PatientController : MonoBehaviour
 {
+
     public NavMeshAgent agent;
     public Animator animator;
 
@@ -17,9 +18,6 @@ public class PatientController : MonoBehaviour
     public string idleString;
     public string deadString = "isDead";
 
-    [Header("Item Need")]
-    public ItemType itemNeed;
-
     [Header("Patient Story")]
     public string story;
     public string thanksString;
@@ -27,7 +25,6 @@ public class PatientController : MonoBehaviour
     public PatienteState state;
 
     public bool reachedDoctor = false;
-    public bool itemNeedMet = false;
 
     // Update is called once per frame
     void Update()
@@ -105,6 +102,7 @@ public class PatientController : MonoBehaviour
                     GameManager.Instance.uiManager.ShowBubbleText(story);
                     reachedDoctor = true;
                     Debug.Log("ENTERED DOCTOR AREA");
+
                 }
             }
         }
@@ -127,11 +125,6 @@ public class PatientController : MonoBehaviour
             }
         }
     }
-
-    public void UseItemOnPatient()
-    {
-
-    }
 }
 
 public enum PatienteState
@@ -141,3 +134,4 @@ public enum PatienteState
     DEAD,
     DEFAULT
 }
+

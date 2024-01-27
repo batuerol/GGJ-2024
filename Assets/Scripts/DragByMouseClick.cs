@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class DragByMouseClick : MonoBehaviour
 {
+    public GameObject body;
     private bool isDragging = false;
     private Camera mainCamera;
 
