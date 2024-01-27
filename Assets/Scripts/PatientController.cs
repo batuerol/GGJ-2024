@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class PatientController : MonoBehaviour
 {
-
     public NavMeshAgent agent;
     public Animator animator;
 
@@ -102,7 +101,6 @@ public class PatientController : MonoBehaviour
                     GameManager.Instance.uiManager.ShowBubbleText(story);
                     reachedDoctor = true;
                     Debug.Log("ENTERED DOCTOR AREA");
-
                 }
             }
         }
