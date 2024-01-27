@@ -6,6 +6,7 @@ public class SelectableItem : MonoBehaviour
 {
     public Outline outlineReference;
 
+    public string itemName;
     public ItemType itemType;
 
     public bool selected = false;

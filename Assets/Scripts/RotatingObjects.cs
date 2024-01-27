@@ -1,7 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 
-public class RotateObjects : MonoBehaviour
+public class RotatingObjects : MonoBehaviour
 {
     public GameObject head;
     public GameObject body;
