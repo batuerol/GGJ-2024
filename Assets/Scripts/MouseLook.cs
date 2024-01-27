@@ -19,6 +19,7 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
+        /*
         Cursor.visible = false;
 
         rotationX += Input.GetAxis("Mouse X") * sensitivity;
@@ -33,8 +34,8 @@ public class MouseLook : MonoBehaviour
 
         int centerX = Screen.width / 2;
         int centerY = Screen.height / 2;
+        */
 
-        Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward, Color.green);
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 5000f, LayerMask.NameToLayer("GGJ_Selectable")))
         {
@@ -53,7 +54,6 @@ public class MouseLook : MonoBehaviour
                 Debug.Log(hit.transform.gameObject.name);
                 onHitHandler(hit.transform.gameObject);
             }
-
         }
         else
         {
