@@ -27,6 +27,8 @@ public class PatientController : MonoBehaviour
 
     public bool startCheckDistance = false;
 
+    public bool doctorDestinationSet = false;
+
     public bool reachedDoctor = false;
     public bool reachedExit = false;
 
@@ -57,16 +59,19 @@ public class PatientController : MonoBehaviour
                 break;
         }
 
-        if (!reachedDoctor)
+        if (doctorDestinationSet)
         {
-            CheckReachDestinationForDoctor();
+            if (!reachedDoctor)
+            {
+                CheckReachDestinationForDoctor();
+            }
         }
-        
+
         if (!reachedExit)
         {
             CheckReachDestinationForExit();
         }
-        
+
     }
 
     public void DisableAllBools()
@@ -83,7 +88,16 @@ public class PatientController : MonoBehaviour
         startCheckDistance = true;
         state = PatienteState.WALK;
         reachedDoctor = false;
+        StartCoroutine("WaitFrames");
     }
+
+    public IEnumerator WaitFrames()
+    {
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+        doctorDestinationSet = true;
+    }
+
     public void GoToExitPosition()
     {
         patientServed = true;
