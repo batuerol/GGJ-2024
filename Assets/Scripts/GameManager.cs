@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        //CallNextPatient();
+        CallNextPatient();
     }
     // Start is called before the first frame update
     public void CallNextPatient()
