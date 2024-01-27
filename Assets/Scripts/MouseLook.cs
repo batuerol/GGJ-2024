@@ -37,13 +37,22 @@ public class MouseLook : MonoBehaviour
 
         Debug.DrawRay(camera.transform.position, camera.transform.forward, Color.green);
         RaycastHit hit;
-        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, Mathf.Infinity, LayerMask.NameToLayer("GGJ_Selectable")))
+        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, 5000f, LayerMask.NameToLayer("GGJ_Selectable")))
         {
+            if (hit.transform.gameObject.GetComponent<SelectableItem>() != null)
+            {
+                Debug.Log("START OTLINE AT: " + hit.transform.name);
+                hit.transform.gameObject.GetComponent<SelectableItem>().SetSelected();
+            }
             if (Input.GetMouseButtonDown(0))
             {
                 Debug.Log(hit.transform.gameObject.name);
                 onHitHandler(hit.transform.gameObject);
             }
+        }
+        else
+        {
+            GameManager.Instance.DeselectAllItems();
         }
     }
 }

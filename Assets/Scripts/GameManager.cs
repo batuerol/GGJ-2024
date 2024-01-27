@@ -8,6 +8,11 @@ public class GameManager : MonoBehaviour
 
     public UIManager uiManager;
     public DoorAnimation doorAnimation;
+    public MouseLook mouseLook;
+
+    public SelectableItem currentSelectable;
+
+    public List<SelectableItem> itemList;
 
     int currentPatientIndex = 0;
 
@@ -45,5 +50,13 @@ public class GameManager : MonoBehaviour
         currentPatient.gameObject.SetActive(true);
         currentPatient.GoToTargetPosition();
         */
+    }
+
+    public void DeselectAllItems()
+    {
+        foreach (SelectableItem item in itemList) {
+
+            item.DeselectItem();
+        }
     }
 }

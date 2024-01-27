@@ -53,7 +53,7 @@ public class PatientController : MonoBehaviour
 
         if (!reachedDoctor)
         {
-            CheckReachDestinationForDoctor();
+            //CheckReachDestinationForDoctor();
         }
         /*
         else
@@ -105,7 +105,6 @@ public class PatientController : MonoBehaviour
             }
         }
     }
-
 
     public void CheckReachDestinationForExit()
     {
