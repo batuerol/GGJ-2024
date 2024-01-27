@@ -57,6 +57,8 @@ ExportedObj/
 # All metas
 **/*.meta
 
+**/*.zip
+
 # Unity3D generated file on crash reports
 sysinfo.txt
 
