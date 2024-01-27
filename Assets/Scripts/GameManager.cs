@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public DoorAnimation doorAnimation;
     public MouseLook mouseLook;
 
-    public SelectableItem currentSelectable;
+    public SelectableItem currentSelectable;    
 
     public List<SelectableItem> itemList;
 
