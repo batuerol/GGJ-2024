@@ -4213,10 +4213,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3577418050470131173}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19543e10e6f2fcf57bcbbf060cfae93f, type: 3}
+  m_Script: {fileID: 11500000, guid: d72f75c63bfbde343b5216d77bfef706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  body: {fileID: 4813484577447223052}
+  body: {fileID: 0}
 --- !u!65 &5204221462746511377
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5831,10 +5831,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4998714609975626491}
   - component: {fileID: 3475547224471084733}
-  - component: {fileID: 8021025559394768892}
-  - component: {fileID: 3361054915957815996}
-  - component: {fileID: 2036600188220339031}
   - component: {fileID: 4079251063540064143}
+  - component: {fileID: 9144325048237677640}
   m_Layer: 0
   m_Name: neck-man-boxer
   m_TagString: Untagged
@@ -5880,117 +5878,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!143 &8021025559394768892
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4813484577447223052}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 1.8
-  m_Radius: 0.3
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.99, z: 0}
---- !u!114 &3361054915957815996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4813484577447223052}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c31d813974da4df4d9a86f1828bae3e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  idleStates:
-  - stateName: Waving
-    animationBool: isWaving
-    minStateTime: 1
-    maxStateTime: 4
-    stateWeight: 0
-  - stateName: Texting
-    animationBool: isTexting
-    minStateTime: 10
-    maxStateTime: 30
-    stateWeight: 1
-  movementStates:
-  - stateName: Walking
-    animationBool: isWalking
-    maxStateTime: 3
-    moveSpeed: 2
-    turnSpeed: 400
-  - stateName: Running
-    animationBool: isRunning
-    maxStateTime: 4
-    moveSpeed: 3
-    turnSpeed: 200
-  attackingStates:
-  - stateName: Kicking
-    animationBool: isKicking
-  - stateName: PunchingLeft
-    animationBool: isPunching_Left
-  - stateName: PunchingRight
-    animationBool: isPunching_Right
-  deathStates:
-  - stateName: Dead
-    animationBool: isDead
-  species: Human
-  stats: {fileID: 11400000, guid: 5f52eda6bb8a93a4b893f847eee5dcc5, type: 2}
-  wanderZone: 10
-  awareness: 30
-  scent: 30
-  constainedToWanderZone: 0
-  nonAgressiveTowards: []
-  matchSurfaceRotation: 0
-  surfaceRotationSpeed: 2
-  logChanges: 0
-  showGizmos: 0
-  drawWanderRange: 1
-  drawScentRange: 1
-  drawAwarenessRange: 1
-  deathEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  attackingEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  idleEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  movementEvent:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &2036600188220339031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4813484577447223052}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c785f97ed3e80994e93818b6318532dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  customPartMask: {fileID: 31900000, guid: 2723b603c24446e4ea9eb0c4c1b44ba7, type: 2}
-  minMax: {x: 0.9, y: 1.1}
-  MorphOnStart: 0
 --- !u!195 &4079251063540064143
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6013,6 +5900,30 @@ NavMeshAgent:
   m_BaseOffset: -0.1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &9144325048237677640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4813484577447223052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8ae5c6d5256de4f894019fd3879a71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 4079251063540064143}
+  animator: {fileID: 3475547224471084733}
+  removableObject: {fileID: 0}
+  patientTargetTransform: {fileID: 0}
+  patientExitTransform: {fileID: 0}
+  walkString: isWalking
+  idleString: 
+  deadString: isDead
+  story: 
+  thanksString: 
+  state: 0
+  reachedDoctor: 0
 --- !u!1 &4904724172502662000
 GameObject:
   m_ObjectHideFlags: 0

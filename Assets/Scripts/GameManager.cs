@@ -38,18 +38,15 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     public void CallNextPatient()
     {
+        Debug.Log("CALLING PATIENT");
         if (currentPatientIndex <= patientList.Count)
         {
             currentPatient = patientList[currentPatientIndex];
-            currentPatient.gameObject.SetActive(true);
+            //currentPatient.gameObject.SetActive(true);
             currentPatient.GoToDoctorPosition();
         }
 
-        /*
-        currentPatient = patientList[currentPatientIndex];
-        currentPatient.gameObject.SetActive(true);
-        currentPatient.GoToTargetPosition();
-        */
+        currentPatientIndex++;
     }
 
     public void DeselectAllItems()
