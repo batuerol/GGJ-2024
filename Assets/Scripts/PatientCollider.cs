@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PatientCollider : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public PatientController patientController;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("SelectableCollider"))
+        {
+            if (other.GetComponent<SelectableItem>().itemType == patientController.requiredItemType)
+            {
+                Debug.Log("PATIENTE GRABBED ITEM");
+                GameManager.Instance.currentSelectable = null;
+                other.gameObject.SetActive(false);
+                patientController.CallThanksSequence();
+            }
+        }
     }
 }

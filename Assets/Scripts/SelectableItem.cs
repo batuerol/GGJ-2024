@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
@@ -29,17 +27,17 @@ public class SelectableItem : MonoBehaviour
     {
         SetSelected();
         is_picked_up = true;
-        transform.DOMove(Camera.main.transform.position, 0.5f);
+        gameObject.transform.SetParent(GameManager.Instance.fpsController.pickedObjectTransform);
+        transform.DOLocalMove(GameManager.Instance.fpsController.pickedObjectTransform.localPosition, 0.5f);
+        gameObject.transform.localPosition = new Vector3(0.05f, 0f, 8f);
+        gameObject.transform.localEulerAngles = Vector3.zero;
     }
 
     public void ThrowItemToPatient()
     {
-        //item'i hastaya firlat!        
-
         if (is_picked_up)
         {
-            transform.DOJump(GameManager.Instance.currentPatient.transform.position,
-                2, 1, 1);
+            transform.DOJump(GameManager.Instance.currentPatient.transform.position, 2, 1, 1);
         }
     }
 

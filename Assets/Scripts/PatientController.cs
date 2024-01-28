@@ -28,6 +28,7 @@ public class PatientController : MonoBehaviour
     [Header("Piss Behaviour")]
     public PissingBehaviour pissbehaviour;
 
+    public ItemType requiredItemType;
 
     [Header("Patient Story")]
     public string story;
@@ -92,7 +93,7 @@ public class PatientController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-            CallThanksSequence();
+            //CallThanksSequence();
         }
     }
 
@@ -212,6 +213,8 @@ public class PatientController : MonoBehaviour
                 startCheckDistance = false;
                 Debug.Log("ARRIVED EXIT AREA " + gameObject.name);
                 OnPatientExit?.Invoke();
+
+                gameObject.SetActive(false);
             }
         }
     }

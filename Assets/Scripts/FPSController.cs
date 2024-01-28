@@ -6,6 +6,10 @@ using UnityEngine;
 
 public class FPSController : MonoBehaviour
 {
+    [Header("Picked Object Transform")]
+    public Transform pickedObjectTransform;
+
+    [Header("Movement Properties")]
     public float walkingSpeed = 7.5f;
     public float runningSpeed = 11.5f;
     public float jumpSpeed = 8.0f;

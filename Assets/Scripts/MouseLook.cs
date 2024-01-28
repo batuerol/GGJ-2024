@@ -19,22 +19,6 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
-        /*
-        Cursor.visible = false;
-
-        rotationX += Input.GetAxis("Mouse X") * sensitivity;
-        rotationY += Input.GetAxis("Mouse Y") * sensitivity;
-
-        rotationY = Mathf.Clamp(rotationY, -90.0f, 90.0f);
-
-        Quaternion quatX = Quaternion.AngleAxis(rotationX, Vector3.up);
-        Quaternion quatY = Quaternion.AngleAxis(rotationY, Vector3.left);
-
-        Camera.main.transform.localRotation = startRotation * quatX * quatY;
-
-        int centerX = Screen.width / 2;
-        int centerY = Screen.height / 2;
-        */
 
         if (GameManager.Instance.currentSelectable != null &&
             GameManager.Instance.currentSelectable.is_picked_up)

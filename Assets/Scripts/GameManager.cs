@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public MouseLook mouseLook;
     public AudioManager audioManager;
 
+    public FPSController fpsController;
+
     public SelectableItem currentSelectable;    
 
     public List<SelectableItem> itemList;
