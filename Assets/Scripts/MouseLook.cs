@@ -52,7 +52,6 @@ public class MouseLook : MonoBehaviour
             {
                 if (hit.transform.gameObject.GetComponent<SelectableItem>() != null)
                 {
-                    Debug.Log("START OTLINE AT: " + hit.transform.name);
                     hit.transform.gameObject.GetComponent<SelectableItem>().SetSelected();
 
                     if (Input.GetMouseButtonDown(0))

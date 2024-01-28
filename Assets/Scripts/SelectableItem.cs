@@ -29,33 +29,18 @@ public class SelectableItem : MonoBehaviour
     {
         SetSelected();
         is_picked_up = true;
-        if (itemType == ItemType.BABY)
-        {
-            transform.parent.DOMove(Camera.main.transform.position, 0.5f);
-        }
-        else
-        {
-            transform.DOMove(Camera.main.transform.position, 0.5f);
-        }
+        transform.DOMove(Camera.main.transform.position, 0.5f);
     }
 
     public void ThrowItemToPatient()
     {
         //item'i hastaya firlat!        
-        
+
         if (is_picked_up)
         {
-            if (itemType == ItemType.BABY)
-            {
-                transform.parent.DOJump(GameManager.Instance.currentPatient.transform.position,
-                    2, 1, 1);
-            }
-            else
-            {
-                transform.DOJump(GameManager.Instance.currentPatient.transform.position,
-                    2, 1, 1);
-            }
-        }        
+            transform.DOJump(GameManager.Instance.currentPatient.transform.position,
+                2, 1, 1);
+        }
     }
 
 }
