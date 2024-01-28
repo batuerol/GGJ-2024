@@ -1,6 +1,10 @@
 ## Global Game Jam 2024
 
-**Tema: "Güldür Beni" (Make Me Laugh)**
+**Aman Doktor**
+
+> "Aman doktor, canım gülüm doktor. Derdime bir çare. Çaresiz dertlere düştüm, doktor bana bir çare."
+
+Amansız hastalıklarla tutulmuş vatandaşların dertlerine derman olma simülasyonu.
 
 
 <div align="center">
