@@ -54,8 +54,7 @@ ExportedObj/
 *.pdb.meta
 *.mdb.meta
 
-# All metas
-**/*.meta
+
 
 **/*.zip
 

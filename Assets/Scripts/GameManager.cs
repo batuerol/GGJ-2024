@@ -9,8 +9,11 @@ public class GameManager : MonoBehaviour
     public UIManager uiManager;
     public DoorAnimation doorAnimation;
     public MouseLook mouseLook;
+    public AudioManager audioManager;
 
-    public SelectableItem currentSelectable;
+    public FPSController fpsController;
+
+    public SelectableItem currentSelectable;    
 
     public List<SelectableItem> itemList;
 
@@ -41,15 +44,11 @@ public class GameManager : MonoBehaviour
         if (currentPatientIndex <= patientList.Count)
         {
             currentPatient = patientList[currentPatientIndex];
-            currentPatient.gameObject.SetActive(true);
+            //currentPatient.gameObject.SetActive(true);
             currentPatient.GoToDoctorPosition();
         }
 
-        /*
-        currentPatient = patientList[currentPatientIndex];
-        currentPatient.gameObject.SetActive(true);
-        currentPatient.GoToTargetPosition();
-        */
+        currentPatientIndex++;
     }
 
     public void DeselectAllItems()

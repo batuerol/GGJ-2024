@@ -20,30 +20,19 @@ public class DoorAnimation : MonoBehaviour
 
         doorShutAudioSource.clip = doorShutClip;
         doorOpenAudioSource.clip = doorOpenSound;
-
-    }
-
-    public void OpenDoorNormal()
-    {
-
-    }
-
-    public void CloseDoorNormal()
-    {
-
     }
 
     public void OpenDoorFast()
     {
         doorOpenAudioSource.Play();
         Vector3 openVector = new Vector3(door.transform.localEulerAngles.x, 173f, door.transform.localEulerAngles.z);
-        door.transform.DORotate(openVector, 0.2f).OnComplete(() => PlayShutSound());
+        door.transform.DOLocalRotate(openVector, 0.3f, RotateMode.FastBeyond360).OnComplete(() => PlayShutSound());
     }
 
     public void CloseDoorFast()
     {
         Vector3 openVector = new Vector3(door.transform.localEulerAngles.x, 0f, door.transform.localEulerAngles.z);
-        door.transform.DORotate(openVector, 0.2f).OnComplete(() => PlayShutSound());
+        door.transform.DOLocalRotate(openVector, 0.3f , RotateMode.FastBeyond360).OnComplete(() => PlayShutSound());
     }
 
     public void PlayShutSound()
