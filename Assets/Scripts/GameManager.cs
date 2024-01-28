@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -57,5 +58,12 @@ public class GameManager : MonoBehaviour
 
             item.DeselectItem();
         }
+    }
+
+    public void die()
+    {
+        fpsController.enabled = false;
+        
+        fpsController.transform.DORotate(new Vector3(0.0f, 0.0f, 45.0f), 1.0f);
     }
 }

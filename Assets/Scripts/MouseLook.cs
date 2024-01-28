@@ -11,6 +11,7 @@ public class MouseLook : MonoBehaviour
     private Quaternion startRotation;
     public delegate void OnHitCallback(GameObject gameObject);
     public OnHitCallback onHitHandler;
+    public Shader shader;
 
     void Start()
     {
@@ -19,7 +20,12 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            GameManager.Instance.die();
+            return;
+        }
+        Camera.main.RenderWithShader(shader, "");
         if (GameManager.Instance.currentSelectable != null &&
             GameManager.Instance.currentSelectable.is_picked_up)
         {
