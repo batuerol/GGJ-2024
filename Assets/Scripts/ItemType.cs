@@ -5,5 +5,6 @@ public enum ItemType
     SEMAVER,
     PILLS,
     BABY,
+    PISSCUP,
     NOITEM
 }

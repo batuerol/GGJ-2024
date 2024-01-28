@@ -4216,7 +4216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d72f75c63bfbde343b5216d77bfef706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  body: {fileID: 0}
+  patientController: {fileID: 0}
 --- !u!65 &5204221462746511377
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5920,10 +5920,18 @@ MonoBehaviour:
   walkString: isWalking
   idleString: 
   deadString: isDead
+  rotationBehaviour: {fileID: 0}
   story: 
   thanksString: 
   state: 0
+  startCheckDistance: 0
+  doctorDestinationSet: 0
+  exitDestinationSet: 0
   reachedDoctor: 0
+  reachedExit: 0
+  patientServed: 0
+  speakClip: {fileID: 0}
+  actionSound: {fileID: 0}
 --- !u!1 &4904724172502662000
 GameObject:
   m_ObjectHideFlags: 0

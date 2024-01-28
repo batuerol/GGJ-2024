@@ -10,7 +10,7 @@ public class RotatingObjects : MonoBehaviour
 
     void Start()
     {
-        head.transform.DORotate(new Vector3(0, 360, 0), rotationDuration, RotateMode.FastBeyond360)
+        head.transform.DOLocalRotate(new Vector3(-360f,0f, 0f), 0.3f, RotateMode.FastBeyond360)
             .SetEase(Ease.Linear)
             .SetLoops(-1, LoopType.Incremental);
     }
@@ -18,7 +18,7 @@ public class RotatingObjects : MonoBehaviour
     public void StartRotatingBody()
     {
         // Rotate around X-axis indefinitely
-        body.transform.DORotate(new Vector3(0, 360, 0), rotationDuration, RotateMode.FastBeyond360)
+        body.transform.DOLocalRotate(new Vector3(0f, 360f, 0f), 0.3f, RotateMode.FastBeyond360)
             .SetEase(Ease.Linear)
             .SetLoops(-1, LoopType.Incremental);
     }

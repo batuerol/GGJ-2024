@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +10,11 @@ public class GameManager : MonoBehaviour
     public UIManager uiManager;
     public DoorAnimation doorAnimation;
     public MouseLook mouseLook;
+    public AudioManager audioManager;
 
-    public SelectableItem currentSelectable;
+    public FPSController fpsController;
+
+    public SelectableItem currentSelectable;    
 
     public List<SelectableItem> itemList;
 
@@ -38,7 +42,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     public void CallNextPatient()
     {
-        Debug.Log("CALLING PATIENT");
         if (currentPatientIndex <= patientList.Count)
         {
             currentPatient = patientList[currentPatientIndex];
@@ -55,5 +58,12 @@ public class GameManager : MonoBehaviour
 
             item.DeselectItem();
         }
+    }
+
+    public void die()
+    {
+        fpsController.enabled = false;
+        
+        fpsController.transform.DORotate(new Vector3(0.0f, 0.0f, 45.0f), 1.0f);
     }
 }
