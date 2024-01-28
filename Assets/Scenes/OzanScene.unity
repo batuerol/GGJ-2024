@@ -552,6 +552,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HeadSpinningMan
       objectReference: {fileID: 0}
+    - target: {fileID: 4143796353519574998, guid: 891de5da659c59440ad8e9c48f706045, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 600
+      objectReference: {fileID: 0}
     - target: {fileID: 4891993887481022164, guid: 891de5da659c59440ad8e9c48f706045, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.477
@@ -591,6 +595,18 @@ PrefabInstance:
     - target: {fileID: 4891993887481022164, guid: 891de5da659c59440ad8e9c48f706045, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7259113011642692474, guid: 891de5da659c59440ad8e9c48f706045, type: 3}
+      propertyPath: story
+      value: "Doktor ba\u015F\u0131m \xE7ok d\xF6n\xFCyor. Buna bir \xE7are var m\u0131?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7259113011642692474, guid: 891de5da659c59440ad8e9c48f706045, type: 3}
+      propertyPath: actionSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e31c830cb3c82c04481a2b1d352dfced, type: 3}
+    - target: {fileID: 7259113011642692474, guid: 891de5da659c59440ad8e9c48f706045, type: 3}
+      propertyPath: thanksString
+      value: "Te\u015Fekk\xFCrler! *pata pata pata pata*"
       objectReference: {fileID: 0}
     - target: {fileID: 7259113011642692474, guid: 891de5da659c59440ad8e9c48f706045, type: 3}
       propertyPath: requiredItemType
@@ -1232,6 +1248,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 245136119073704800, guid: 369f2cadcd837664c9513ec1af5de4b8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.9372563
+      objectReference: {fileID: 0}
+    - target: {fileID: 245136119073704800, guid: 369f2cadcd837664c9513ec1af5de4b8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.9215
+      objectReference: {fileID: 0}
     - target: {fileID: 407688036712071415, guid: 369f2cadcd837664c9513ec1af5de4b8, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -1307,6 +1331,14 @@ PrefabInstance:
     - target: {fileID: 5065657239641672031, guid: 369f2cadcd837664c9513ec1af5de4b8, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5069945259120090002, guid: 369f2cadcd837664c9513ec1af5de4b8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.9978335
+      objectReference: {fileID: 0}
+    - target: {fileID: 5069945259120090002, guid: 369f2cadcd837664c9513ec1af5de4b8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.2525
       objectReference: {fileID: 0}
     - target: {fileID: 5081152739986049228, guid: 369f2cadcd837664c9513ec1af5de4b8, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2053,6 +2085,12 @@ PrefabInstance:
     - {fileID: 6684667777803804715, guid: 369f2cadcd837664c9513ec1af5de4b8, type: 3}
     - {fileID: 1188618977225947039, guid: 369f2cadcd837664c9513ec1af5de4b8, type: 3}
     - {fileID: 7657377151924851780, guid: 369f2cadcd837664c9513ec1af5de4b8, type: 3}
+    - {fileID: 4614256548914385612, guid: 369f2cadcd837664c9513ec1af5de4b8, type: 3}
+    - {fileID: 5645750514656808369, guid: 369f2cadcd837664c9513ec1af5de4b8, type: 3}
+    - {fileID: 7172326823681495750, guid: 369f2cadcd837664c9513ec1af5de4b8, type: 3}
+    - {fileID: 5853931867038388129, guid: 369f2cadcd837664c9513ec1af5de4b8, type: 3}
+    - {fileID: 2867753497498594438, guid: 369f2cadcd837664c9513ec1af5de4b8, type: 3}
+    - {fileID: 7647924886726103921, guid: 369f2cadcd837664c9513ec1af5de4b8, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5835403887476436450, guid: 369f2cadcd837664c9513ec1af5de4b8, type: 3}
       insertIndex: -1
@@ -3817,7 +3855,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3850,7 +3888,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -4127,7 +4165,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4154,13 +4192,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 65
   m_fontSizeBase: 65
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -4303,7 +4341,7 @@ Transform:
   m_GameObject: {fileID: 1639945206}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.082, y: 0, z: -3.214}
+  m_LocalPosition: {x: -1.391, y: 0, z: -3.214}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4317,6 +4355,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4079251063540064143, guid: b83bb26e7b3837844ae583db57554fcf, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 600
+      objectReference: {fileID: 0}
     - target: {fileID: 4813484577447223052, guid: b83bb26e7b3837844ae583db57554fcf, type: 3}
       propertyPath: m_Name
       value: neck-man-boxer
@@ -4360,6 +4402,14 @@ PrefabInstance:
     - target: {fileID: 4998714609975626491, guid: b83bb26e7b3837844ae583db57554fcf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144325048237677640, guid: b83bb26e7b3837844ae583db57554fcf, type: 3}
+      propertyPath: story
+      value: "Doktor, boynumda inan\u0131lmaz bir a\u011Fr\u0131 var."
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144325048237677640, guid: b83bb26e7b3837844ae583db57554fcf, type: 3}
+      propertyPath: thanksString
+      value: "\xC7ok iyi geldi."
       objectReference: {fileID: 0}
     - target: {fileID: 9144325048237677640, guid: b83bb26e7b3837844ae583db57554fcf, type: 3}
       propertyPath: requiredItemType
@@ -4767,6 +4817,15 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1398152317424112104, guid: 2c1b8e21241ba184a8124c322714c0c8, type: 3}
+      propertyPath: story
+      value: "Doktor bey \xE7ocu\u011Fum olmuyor, her \u015Feyi denedik olmad\u0131,
+        gitmedi\u011Fimiz yer kalmad\u0131."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398152317424112104, guid: 2c1b8e21241ba184a8124c322714c0c8, type: 3}
+      propertyPath: speakClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7ce8a01b5c5b52640b879c490c69234d, type: 3}
+    - target: {fileID: 1398152317424112104, guid: 2c1b8e21241ba184a8124c322714c0c8, type: 3}
       propertyPath: requiredItemType
       value: 3
       objectReference: {fileID: 0}
@@ -4817,6 +4876,10 @@ PrefabInstance:
     - target: {fileID: 2032688947256954583, guid: 2c1b8e21241ba184a8124c322714c0c8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2797953937769467379, guid: 2c1b8e21241ba184a8124c322714c0c8, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 4043800632564870890, guid: 2c1b8e21241ba184a8124c322714c0c8, type: 3}
       propertyPath: m_Name
@@ -4940,6 +5003,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4097759398279810858, guid: 5f031675681cd504a83cc08d05a4b01c, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097759398279810858, guid: 5f031675681cd504a83cc08d05a4b01c, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097759398279810858, guid: 5f031675681cd504a83cc08d05a4b01c, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.451087
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097759398279810858, guid: 5f031675681cd504a83cc08d05a4b01c, type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5665029705735679748, guid: 5f031675681cd504a83cc08d05a4b01c, type: 3}
       propertyPath: requiredItemType
       value: 4
@@ -4952,6 +5031,30 @@ PrefabInstance:
       propertyPath: patientTargetTransform
       value: 
       objectReference: {fileID: 1639945210}
+    - target: {fileID: 7284786327561122377, guid: 5f031675681cd504a83cc08d05a4b01c, type: 3}
+      propertyPath: m_fontSize
+      value: 7.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284786327561122377, guid: 5f031675681cd504a83cc08d05a4b01c, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 7284786327561122377, guid: 5f031675681cd504a83cc08d05a4b01c, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 7284786327561122377, guid: 5f031675681cd504a83cc08d05a4b01c, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482143449609505621, guid: 5f031675681cd504a83cc08d05a4b01c, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 8135993925954257760, guid: 5f031675681cd504a83cc08d05a4b01c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 8554949110584288757, guid: 5f031675681cd504a83cc08d05a4b01c, type: 3}
       propertyPath: m_Name
       value: PissingMan
@@ -4973,6 +5076,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3003554134115295856, guid: 7cead9027d2ec6b4c9c4827bc39597e3, type: 3}
+      propertyPath: thanksString
+      value: "\u015Eimdi tamamlanm\u0131\u015F hissediyorum."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003554134115295856, guid: 7cead9027d2ec6b4c9c4827bc39597e3, type: 3}
       propertyPath: requiredItemType
       value: 1
       objectReference: {fileID: 0}
@@ -4984,6 +5091,10 @@ PrefabInstance:
       propertyPath: patientTargetTransform
       value: 
       objectReference: {fileID: 1639945210}
+    - target: {fileID: 5936551059149679545, guid: 7cead9027d2ec6b4c9c4827bc39597e3, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 600
+      objectReference: {fileID: 0}
     - target: {fileID: 6503884814888964612, guid: 7cead9027d2ec6b4c9c4827bc39597e3, type: 3}
       propertyPath: m_Name
       value: teapotManPatient

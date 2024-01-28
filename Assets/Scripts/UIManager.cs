@@ -35,7 +35,7 @@ public class UIManager : MonoBehaviour
     {
         patientStoryText.text = story;
         patientStoryBubble.transform.DOScale(Vector3.one, 0.3f).SetEase(Ease.InBounce);
-        Invoke("HideBubbleText", 4f);
+        Invoke("HideBubbleText", 5f);
     }
 
     public void HideBubbleText()

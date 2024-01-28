@@ -33,7 +33,7 @@ public class PissingBehaviour : MonoBehaviour
     public void StartPissing()
     {
         pissParticle.Play();
-        DOTween.To(() => particleModule.gravityModifierMultiplier, x => particleModule.gravityModifierMultiplier = x, 1f, 1f);
+        DOTween.To(() => particleModule.gravityModifierMultiplier, x => particleModule.gravityModifierMultiplier = x, 0.3f, 1f);
     }
 
 }
