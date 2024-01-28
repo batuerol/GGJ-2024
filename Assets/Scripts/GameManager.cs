@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public UIManager uiManager;
     public DoorAnimation doorAnimation;
     public MouseLook mouseLook;
+    public AudioManager audioManager;
 
     public SelectableItem currentSelectable;    
 

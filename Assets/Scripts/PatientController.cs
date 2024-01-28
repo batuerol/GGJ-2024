@@ -22,6 +22,13 @@ public class PatientController : MonoBehaviour
     [Header("Rotating Object")]
     public RotatingObjects rotationBehaviour;
 
+    [Header("Object Activator")]
+    public ObjectActivator objectActivator;
+
+    [Header("Piss Behaviour")]
+    public PissingBehaviour pissbehaviour;
+
+
     [Header("Patient Story")]
     public string story;
     public string thanksString;
@@ -39,6 +46,10 @@ public class PatientController : MonoBehaviour
     private Action OnPatientExit;
 
     public bool patientServed = false;
+
+    [Header("Audio Clips")]
+    public AudioClip speakClip;
+    public AudioClip actionSound;
 
     private void Start()
     {
@@ -77,6 +88,11 @@ public class PatientController : MonoBehaviour
             {
                 CheckReachDestinationForExit();
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            CallThanksSequence();
         }
     }
 
@@ -127,6 +143,15 @@ public class PatientController : MonoBehaviour
         {
             rotationBehaviour.StartRotatingBody();
         }
+        if (objectActivator != null)
+        {
+            objectActivator.ActivateObject();
+        }
+        if (pissbehaviour != null)
+        {
+            pissbehaviour.StartParticleSystem();
+        }
+        GameManager.Instance.audioManager.PlayAudio(actionSound);
         GameManager.Instance.uiManager.ShowBubbleText(thanksString);
         yield return new WaitForSeconds(2f);
         GoToExitPosition();
@@ -149,15 +174,13 @@ public class PatientController : MonoBehaviour
         {
             if (agent.remainingDistance <= agent.stoppingDistance)
             {
-                Debug.Log("REM. DISTANCE: " + agent.remainingDistance);
-                Debug.Log("STOPs DISTANCE: " + agent.stoppingDistance);
-
                 state = PatienteState.IDLE;
                 DisableAllBools();
                 GameManager.Instance.uiManager.ShowBubbleText(story);
                 reachedDoctor = true;
                 startCheckDistance = false;
                 Debug.Log("ENTERED DOCTOR AREA " + gameObject.name);
+                GameManager.Instance.audioManager.PlayAudio(speakClip);
             }
         }
         /*
