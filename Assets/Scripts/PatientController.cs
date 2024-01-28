@@ -151,8 +151,9 @@ public class PatientController : MonoBehaviour
         }
         if (pissbehaviour != null)
         {
-            waitTime = 20f;
+            waitTime = 10f;
             pissbehaviour.StartParticleSystem();
+            StartCoroutine("DeadRoutine");
         }
         GameManager.Instance.audioManager.PlayAudio(actionSound);
         GameManager.Instance.uiManager.ShowBubbleText(thanksString);
@@ -160,6 +161,12 @@ public class PatientController : MonoBehaviour
         GoToExitPosition();
     }
 
+    private IEnumerator DeadRoutine()
+    {
+        yield return new WaitForSeconds(3f);
+        GameManager.Instance.die();
+        GameManager.Instance.uiManager.OnDead();
+    }
 
     public void CallThanksSequence()
     {

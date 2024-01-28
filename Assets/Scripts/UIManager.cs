@@ -18,11 +18,18 @@ public class UIManager : MonoBehaviour
     [Header("TEXT BG")]
     public GameObject textBG;
 
+    [Header("Wasted Canvas")]
+    public GameObject wastedBG;
+    public GameObject wastedYaziBG;
+    public AudioClip wastedSound;
+
     private Action OnProblemSolved;
 
     private void Start()
     {
         patientStoryBubble.transform.localScale = Vector3.zero;
+        wastedBG.SetActive(false);
+        wastedYaziBG.SetActive(false);
     }
     public void ShowBubbleText(string story)
     {
@@ -60,5 +67,20 @@ public class UIManager : MonoBehaviour
     {
         textBG.gameObject.SetActive(false);
         itemText.gameObject.SetActive(false);
+    }
+
+    public void OnDead()
+    {
+        StartCoroutine("StartWastedSequence");
+        //AudioManager
+    }
+
+    public IEnumerator StartWastedSequence()
+    {
+        GameManager.Instance.audioManager.PlayAudio(wastedSound);
+        wastedBG.SetActive(true);
+        yield return new WaitForSeconds(2.5f);
+        wastedYaziBG.SetActive(true);
+
     }
 }
