@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public MouseLook mouseLook;
     public AudioManager audioManager;
 
-    public SelectableItem currentSelectable;
+    public SelectableItem currentSelectable;    
 
     public List<SelectableItem> itemList;
 
@@ -39,7 +39,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     public void CallNextPatient()
     {
-        Debug.Log("CALLING PATIENT");
         if (currentPatientIndex <= patientList.Count)
         {
             currentPatient = patientList[currentPatientIndex];

@@ -23,7 +23,6 @@ public class UIManager : MonoBehaviour
     }
     public void ShowBubbleText(string story)
     {
-        Debug.Log("SHOWING BUBBLE TEXT");
         patientStoryText.text = story;
         patientStoryBubble.transform.DOScale(Vector3.one, 0.3f).SetEase(Ease.InBounce);
         Invoke("HideBubbleText", 2f);

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class MouseLook : MonoBehaviour
 {
@@ -13,7 +14,6 @@ public class MouseLook : MonoBehaviour
 
     void Start()
     {
-
         startRotation = GetComponent<Camera>().transform.localRotation;
     }
 
@@ -36,28 +36,40 @@ public class MouseLook : MonoBehaviour
         int centerY = Screen.height / 2;
         */
 
-        RaycastHit hit;
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 5000f, LayerMask.NameToLayer("GGJ_Selectable")))
+        if (GameManager.Instance.currentSelectable != null &&
+            GameManager.Instance.currentSelectable.is_picked_up)
         {
-            if (hit.transform.gameObject.GetComponent<SelectableItem>() != null)
+            if (Input.GetMouseButtonDown(0)) {
+                GameManager.Instance.currentSelectable.ThrowItemToPatient();
+                GameManager.Instance.currentSelectable.is_picked_up = false;
+                GameManager.Instance.currentSelectable = null;
+            }
+        }
+        else
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 5000f))
             {
-                Debug.Log("START OTLINE AT: " + hit.transform.name);
-                hit.transform.gameObject.GetComponent<SelectableItem>().SetSelected();
+                if (hit.transform.gameObject.GetComponent<SelectableItem>() != null)
+                {
+                    hit.transform.gameObject.GetComponent<SelectableItem>().SetSelected();
+
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        Debug.Log(hit.transform.gameObject.name);
+                        //onHitHandler(hit.transform.gameObject);
+                        hit.transform.gameObject.GetComponent<SelectableItem>().PickupItem();                        
+                    }
+                }
+                else
+                {
+                    GameManager.Instance.DeselectAllItems();
+                }
             }
             else
             {
                 GameManager.Instance.DeselectAllItems();
             }
-
-            if (Input.GetMouseButtonDown(0) && hit.transform.gameObject.GetComponent<SelectableItem>() != null)
-            {
-                Debug.Log(hit.transform.gameObject.name);
-                onHitHandler(hit.transform.gameObject);
-            }
-        }
-        else
-        {
-            GameManager.Instance.DeselectAllItems();
         }
     }
 }
