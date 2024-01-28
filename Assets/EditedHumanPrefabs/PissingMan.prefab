@@ -4176,6 +4176,103 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.12202805, y: 0.023457587, z: 0}
     m_Extent: {x: 0.9195768, y: 0.2768624, z: 0.93823826}
   m_DirtyAABB: 0
+--- !u!1 &2632281271937264735
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6153518968038421703}
+  - component: {fileID: 684215389427207713}
+  - component: {fileID: 8948789703578978143}
+  - component: {fileID: 7272331049808642869}
+  m_Layer: 10
+  m_Name: PatienteCollider
+  m_TagString: PatientCOllider
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6153518968038421703
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2632281271937264735}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.9995523, z: -0, w: -0.029921466}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2928921834052079877}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &684215389427207713
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2632281271937264735}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Height: 1.7
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.87, z: 0}
+--- !u!54 &8948789703578978143
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2632281271937264735}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &7272331049808642869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2632281271937264735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf4980ecde4027f4585a9f0ecefa1528, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patientController: {fileID: 5665029705735679748}
 --- !u!1 &2636069862201791132
 GameObject:
   m_ObjectHideFlags: 0
@@ -10889,7 +10986,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 2.15
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.84, z: 0}
 --- !u!54 &7114639801436981502
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15045,6 +15142,7 @@ GameObject:
   - component: {fileID: 7482143449609505621}
   - component: {fileID: 5665029705735679748}
   - component: {fileID: 8987728189488482506}
+  - component: {fileID: 3739843602624120941}
   m_Layer: 0
   m_Name: PissingMan
   m_TagString: Untagged
@@ -15060,7 +15158,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8554949110584288757}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.03676524, z: -0, w: -0.99932396}
+  m_LocalRotation: {x: 0, y: 0.036765683, z: -0, w: -0.9993239}
   m_LocalPosition: {x: -4.26, y: 0, z: -17.52}
   m_LocalScale: {x: 1.45, y: 1.45, z: 1.45}
   m_ConstrainProportionsScale: 1
@@ -15068,6 +15166,7 @@ Transform:
   - {fileID: 3506362789440580390}
   - {fileID: 1043133722701069994}
   - {fileID: 5013587490914056580}
+  - {fileID: 6153518968038421703}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -364.214, z: 0}
 --- !u!95 &7587972767077839318
@@ -15102,9 +15201,9 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.19
   m_Speed: 3.5
-  m_Acceleration: 8
+  m_Acceleration: 15
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 360
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -15136,18 +15235,19 @@ MonoBehaviour:
   rotationBehaviour: {fileID: 0}
   objectActivator: {fileID: 0}
   pissbehaviour: {fileID: 8987728189488482506}
+  requiredItemType: 4
   story: "Doktor bey, uzayda tuvaletimi yaparken zorlan\u0131yorum. Bir \xE7\xF6z\xFCm\xFC
     var m\u0131d\u0131r?"
   thanksString: "Oh \xE7ok rahatladim."
-  state: 1
+  state: 0
   startCheckDistance: 0
   doctorDestinationSet: 0
   exitDestinationSet: 0
   reachedDoctor: 0
   reachedExit: 0
   patientServed: 0
-  speakClip: {fileID: 8300000, guid: d6a63efd4cb60224794abe1989b76d39, type: 3}
-  actionSound: {fileID: 8300000, guid: a184f824664d54540be557431ffff089, type: 3}
+  speakClip: {fileID: 8300000, guid: 92153bd1ecc4d4944aeee65a0c630a1f, type: 3}
+  actionSound: {fileID: 8300000, guid: 3a53fed7a7f49d84185c3ac47979cf97, type: 3}
 --- !u!114 &8987728189488482506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15162,6 +15262,104 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   censorObject: {fileID: 6614155829740275361}
   pissParticle: {fileID: 4097759398279810858}
+  zipAudiosource: {fileID: 3739843602624120941}
+  zipClip: {fileID: 8300000, guid: 44a7f53f660c6fa4d81af6bba8b3ac75, type: 3}
+--- !u!82 &3739843602624120941
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8554949110584288757}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8585359464667149119
 GameObject:
   m_ObjectHideFlags: 0

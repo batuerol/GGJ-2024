@@ -7933,8 +7933,8 @@ MonoBehaviour:
   reachedDoctor: 0
   reachedExit: 0
   patientServed: 0
-  speakClip: {fileID: 8300000, guid: 2cf6623df727f944a863c0bcef17454f, type: 3}
-  actionSound: {fileID: 8300000, guid: df98e7ca4ed036c4f8552ef364490290, type: 3}
+  speakClip: {fileID: 8300000, guid: 92153bd1ecc4d4944aeee65a0c630a1f, type: 3}
+  actionSound: {fileID: 8300000, guid: d4ef2361da0fbdf4c82a42295cfcf8e0, type: 3}
 --- !u!114 &3062560378535763405
 MonoBehaviour:
   m_ObjectHideFlags: 0

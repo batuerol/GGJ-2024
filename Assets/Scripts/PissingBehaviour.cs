@@ -9,6 +9,9 @@ public class PissingBehaviour : MonoBehaviour
     public ParticleSystem pissParticle;
 
     ParticleSystem.MainModule particleModule;
+
+    public AudioSource zipAudiosource;
+    public AudioClip zipClip;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +24,16 @@ public class PissingBehaviour : MonoBehaviour
 
     public void StartParticleSystem()
     {
+        zipAudiosource.clip = zipClip;
+        zipAudiosource.Play();
         censorObject.SetActive(true);
+        Invoke("StartPissing", 1.5f);
+    }
+
+    public void StartPissing()
+    {
         pissParticle.Play();
-        DOTween.To(() => particleModule.gravityModifierMultiplier, x => particleModule.gravityModifierMultiplier = x, 0.4f, 1f);
+        DOTween.To(() => particleModule.gravityModifierMultiplier, x => particleModule.gravityModifierMultiplier = x, 1f, 1f);
     }
 
 }

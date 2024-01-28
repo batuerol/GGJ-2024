@@ -15,6 +15,9 @@ public class UIManager : MonoBehaviour
     [Header("Item Name Text")]
     public TextMeshProUGUI itemText;
 
+    [Header("TEXT BG")]
+    public GameObject textBG;
+
     private Action OnProblemSolved;
 
     private void Start()
@@ -48,12 +51,14 @@ public class UIManager : MonoBehaviour
 
     public void SetItemText(string itemName)
     {
+        textBG.gameObject.SetActive(true);
         itemText.gameObject.SetActive(true);
         itemText.text = itemName;
     }
 
     public void DisableItemText()
     {
+        textBG.gameObject.SetActive(false);
         itemText.gameObject.SetActive(false);
     }
 }

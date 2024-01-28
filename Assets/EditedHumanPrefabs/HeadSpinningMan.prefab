@@ -2057,7 +2057,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1482354793441387351}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.9999766, z: -0, w: -0.006847542}
+  m_LocalRotation: {x: -0, y: -0.9999766, z: 0, w: -0.006850242}
   m_LocalPosition: {x: -4.5, y: 0, z: -12.54}
   m_LocalScale: {x: 1.45, y: 1.45, z: 1.45}
   m_ConstrainProportionsScale: 1
@@ -2065,6 +2065,7 @@ Transform:
   - {fileID: 2093587401499141559}
   - {fileID: 8088152953662808604}
   - {fileID: 2848901874292155653}
+  - {fileID: 4720790983112107349}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -180.785, z: 0}
 --- !u!95 &1561352243790962990
@@ -2080,7 +2081,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 5ca8df82ba2b05d4db35361646a78809, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -2102,9 +2103,9 @@ NavMeshAgent:
   m_Acceleration: 15
   avoidancePriority: 50
   m_AngularSpeed: 360
-  m_StoppingDistance: 0.1
+  m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 0
+  m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: -0.1
@@ -2131,17 +2132,20 @@ MonoBehaviour:
   idleString: 
   deadString: isDead
   rotationBehaviour: {fileID: 6413147389909552519}
-  story: SELAM DOKTOR
-  thanksString: SAGOL
-  state: 1
+  objectActivator: {fileID: 0}
+  pissbehaviour: {fileID: 0}
+  requiredItemType: 0
+  story: "Doktor ba\u015F\u0131m \xE7ok d\xF6n\xFCyor, buna bir \xE7are var m\u0131?"
+  thanksString: '*PATAPATAPATA*'
+  state: 0
   startCheckDistance: 0
   doctorDestinationSet: 0
   exitDestinationSet: 0
   reachedDoctor: 0
   reachedExit: 0
   patientServed: 0
-  speakClip: {fileID: 0}
-  actionSound: {fileID: 0}
+  speakClip: {fileID: 8300000, guid: 92153bd1ecc4d4944aeee65a0c630a1f, type: 3}
+  actionSound: {fileID: 8300000, guid: 1f09d38fce5d61f4799c7af9825f67fe, type: 3}
 --- !u!114 &6413147389909552519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2154,7 +2158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c43dbd7d2bc8a7848963fe532db3bc75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  head: {fileID: 2502106382794989186}
+  head: {fileID: 971558356356998904}
   body: {fileID: 9036587612198766875}
   rotationDuration: 2
 --- !u!1 &1753788446985968536
@@ -8982,14 +8986,14 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 2.15
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.85, z: 0}
 --- !u!54 &5465681872301116423
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10178,6 +10182,103 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.110557705, y: -0.0034360737, z: -0.000000059604645}
     m_Extent: {x: 0.9237734, y: 0.26206714, z: 0.9257498}
   m_DirtyAABB: 0
+--- !u!1 &8324435216775804997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4720790983112107349}
+  - component: {fileID: 7361441014339806537}
+  - component: {fileID: 5411850633869896769}
+  - component: {fileID: 6913843664116519924}
+  m_Layer: 10
+  m_Name: PatienteCollider
+  m_TagString: PatientCOllider
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4720790983112107349
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8324435216775804997}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4891993887481022164}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &7361441014339806537
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8324435216775804997}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Height: 1.7
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.87, z: 0}
+--- !u!54 &5411850633869896769
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8324435216775804997}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &6913843664116519924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8324435216775804997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf4980ecde4027f4585a9f0ecefa1528, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patientController: {fileID: 7259113011642692474}
 --- !u!1 &8342688283833284209
 GameObject:
   m_ObjectHideFlags: 0
