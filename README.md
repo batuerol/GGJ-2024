@@ -2,6 +2,10 @@
 
 **Aman Doktor**
 
+<div align="center">
+    <img src="Assets/Icon/icon1024x1024.png" alt="Game Icon" width="100" height="100">
+</div>
+
 > "Aman doktor, canım gülüm doktor. Derdime bir çare. Çaresiz dertlere düştüm, doktor bana bir çare."
 
 Amansız hastalıklarla tutulmuş vatandaşların dertlerine derman olma simülasyonu.
@@ -9,8 +13,9 @@ Amansız hastalıklarla tutulmuş vatandaşların dertlerine derman olma simüla
 Bu oyun, oyuncuları amansız hastalıklarla savaşan doktorların rolüne sokar. Oyuncular, zorlu kararlar alarak ve tedavi yöntemleri uygulayarak hastaların hayatlarını kurtarmaya çalışır.
 
 <div align="center">
-    <img src="Assets/Icon/icon1024x1024.png" alt="Game Icon" width="100" height="100">
+    <img src="Static/screenshot.jpeg" alt="Screenshot" width="926" height="525">
 </div>
+
 
 Bu oyun, 2024 Global Game Jam kapsamında geliştirilmiştir. "Güldür Beni" konusunu işleyerek, hastalara şifa dağıtıyoruz.
 
