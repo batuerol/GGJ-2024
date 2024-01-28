@@ -15,17 +15,27 @@ public class UIManager : MonoBehaviour
     [Header("Item Name Text")]
     public TextMeshProUGUI itemText;
 
+    [Header("TEXT BG")]
+    public GameObject textBG;
+
+    [Header("Wasted Canvas")]
+    public GameObject wastedBG;
+    public GameObject wastedYaziBG;
+    public AudioClip wastedSound;
+
     private Action OnProblemSolved;
 
     private void Start()
     {
         patientStoryBubble.transform.localScale = Vector3.zero;
+        wastedBG.SetActive(false);
+        wastedYaziBG.SetActive(false);
     }
     public void ShowBubbleText(string story)
     {
         patientStoryText.text = story;
         patientStoryBubble.transform.DOScale(Vector3.one, 0.3f).SetEase(Ease.InBounce);
-        Invoke("HideBubbleText", 2f);
+        Invoke("HideBubbleText", 4f);
     }
 
     public void HideBubbleText()
@@ -48,6 +58,29 @@ public class UIManager : MonoBehaviour
 
     public void SetItemText(string itemName)
     {
+        textBG.gameObject.SetActive(true);
+        itemText.gameObject.SetActive(true);
         itemText.text = itemName;
+    }
+
+    public void DisableItemText()
+    {
+        textBG.gameObject.SetActive(false);
+        itemText.gameObject.SetActive(false);
+    }
+
+    public void OnDead()
+    {
+        StartCoroutine("StartWastedSequence");
+        //AudioManager
+    }
+
+    public IEnumerator StartWastedSequence()
+    {
+        GameManager.Instance.audioManager.PlayAudio(wastedSound);
+        wastedBG.SetActive(true);
+        yield return new WaitForSeconds(2.5f);
+        wastedYaziBG.SetActive(true);
+
     }
 }

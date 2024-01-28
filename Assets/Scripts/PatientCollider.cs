@@ -6,8 +6,9 @@ public class PatientCollider : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("SelectableCollider"))
+        if (other.CompareTag("ItemCollider"))
         {
+            Debug.Log("COLLIDING ITEM");
             if (other.GetComponent<SelectableItem>().itemType == patientController.requiredItemType)
             {
                 Debug.Log("PATIENTE GRABBED ITEM");

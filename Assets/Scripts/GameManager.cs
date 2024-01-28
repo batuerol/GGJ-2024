@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public List<PatientController> patientList;
     public PatientController currentPatient;
 
+
     private void Awake()
     {
         if (Instance == null)
@@ -42,7 +43,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     public void CallNextPatient()
     {
-        if (currentPatientIndex <= patientList.Count)
+        if (currentPatientIndex < patientList.Count)
         {
             currentPatient = patientList[currentPatientIndex];
             //currentPatient.gameObject.SetActive(true);
@@ -63,7 +64,9 @@ public class GameManager : MonoBehaviour
     public void die()
     {
         fpsController.enabled = false;
-        
-        fpsController.transform.DORotate(new Vector3(0.0f, 0.0f, 45.0f), 1.0f);
+
+        //fpsController.cameraObject.transform.DOShakePosition(1f,2f);
+        fpsController.cameraObject.transform.DOLocalRotate(new Vector3(0f, 0f, 35f), 1.0f);
+        fpsController.cameraObject.transform.DOLocalMoveY(0.2f, 1.0f);
     }
 }

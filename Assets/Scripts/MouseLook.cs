@@ -54,11 +54,13 @@ public class MouseLook : MonoBehaviour
                 else
                 {
                     GameManager.Instance.DeselectAllItems();
+                    GameManager.Instance.uiManager.DisableItemText();
                 }
             }
             else
             {
                 GameManager.Instance.DeselectAllItems();
+                GameManager.Instance.uiManager.DisableItemText();
             }
         }
     }

@@ -25,6 +25,10 @@ public class FPSController : MonoBehaviour
     [HideInInspector]
     public bool canMove = true;
 
+
+    public GameObject cameraObject;
+    public bool isDead = false;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -36,6 +40,10 @@ public class FPSController : MonoBehaviour
 
     void Update()
     {
+        if (isDead)
+        {
+            return;
+        }
         // We are grounded, so recalculate move direction based on axes
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);

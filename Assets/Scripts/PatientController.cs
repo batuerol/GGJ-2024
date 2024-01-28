@@ -140,6 +140,7 @@ public class PatientController : MonoBehaviour
 
     private IEnumerator WaitAndLeave()
     {
+        float waitTime = 2f;
         if (rotationBehaviour != null)
         {
             rotationBehaviour.StartRotatingBody();
@@ -150,14 +151,22 @@ public class PatientController : MonoBehaviour
         }
         if (pissbehaviour != null)
         {
+            waitTime = 10f;
             pissbehaviour.StartParticleSystem();
+            StartCoroutine("DeadRoutine");
         }
         GameManager.Instance.audioManager.PlayAudio(actionSound);
         GameManager.Instance.uiManager.ShowBubbleText(thanksString);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(waitTime);
         GoToExitPosition();
     }
 
+    private IEnumerator DeadRoutine()
+    {
+        yield return new WaitForSeconds(3f);
+        GameManager.Instance.die();
+        GameManager.Instance.uiManager.OnDead();
+    }
 
     public void CallThanksSequence()
     {
