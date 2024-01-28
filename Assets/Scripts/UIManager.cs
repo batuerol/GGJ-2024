@@ -25,7 +25,7 @@ public class UIManager : MonoBehaviour
     {
         patientStoryText.text = story;
         patientStoryBubble.transform.DOScale(Vector3.one, 0.3f).SetEase(Ease.InBounce);
-        Invoke("HideBubbleText", 2f);
+        Invoke("HideBubbleText", 4f);
     }
 
     public void HideBubbleText()
@@ -48,6 +48,12 @@ public class UIManager : MonoBehaviour
 
     public void SetItemText(string itemName)
     {
+        itemText.gameObject.SetActive(true);
         itemText.text = itemName;
+    }
+
+    public void DisableItemText()
+    {
+        itemText.gameObject.SetActive(false);
     }
 }

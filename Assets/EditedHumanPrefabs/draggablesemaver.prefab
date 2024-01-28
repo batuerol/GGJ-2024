@@ -177,10 +177,11 @@ GameObject:
   - component: {fileID: 8115929044275038377}
   - component: {fileID: 5099649573263161469}
   - component: {fileID: 8186613429385687120}
-  - component: {fileID: 8148222098861298652}
+  - component: {fileID: 1397003128590373971}
+  - component: {fileID: 6653970357380048989}
   m_Layer: 0
   m_Name: draggablesemaver
-  m_TagString: Untagged
+  m_TagString: ItemCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -193,10 +194,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8309673753919147013}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.06501658, y: -0.7140655, z: -0.69418174, w: 0.06320615}
+  m_LocalRotation: {x: -0.06501658, y: -0.7140662, z: -0.694181, w: 0.06320601}
   m_LocalPosition: {x: 4.06, y: 0.34, z: -48.63}
-  m_LocalScale: {x: 0.53876257, y: 0.53876257, z: 0.53876257}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8833749332652042187}
   - {fileID: 7860980550298163101}
@@ -225,8 +226,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -251,7 +252,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10.4, y: 8.6, z: 18.13}
   m_Center: {x: 0, y: 0, z: 8.2}
---- !u!114 &8148222098861298652
+--- !u!114 &1397003128590373971
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -260,10 +261,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 8309673753919147013}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d72f75c63bfbde343b5216d77bfef706, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e3bce9b5e691a6439d1854befd9b9d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patientController: {fileID: 0}
+  outlineReference: {fileID: 6653970357380048989}
+  itemName: Semaver
+  itemType: 1
+  is_picked_up: 0
+--- !u!114 &6653970357380048989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8309673753919147013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 0.8235294, b: 0, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &9014376336918477575
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class SelectableItem : MonoBehaviour
         //GetComponent<Outline>().enabled = true;
         outlineReference.OutlineWidth = 10f;
         GameManager.Instance.currentSelectable = this;
+        GameManager.Instance.uiManager.SetItemText(itemName);
     }
 
     public void DeselectItem()
