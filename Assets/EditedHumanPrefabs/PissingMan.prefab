@@ -15182,7 +15182,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 5ca8df82ba2b05d4db35361646a78809, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -15209,7 +15209,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: -0.1
+  m_BaseOffset: -0.05
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &5665029705735679748
@@ -15235,7 +15235,7 @@ MonoBehaviour:
   rotationBehaviour: {fileID: 0}
   objectActivator: {fileID: 0}
   pissbehaviour: {fileID: 8987728189488482506}
-  requiredItemType: 4
+  requiredItemType: 0
   story: "Doktor bey, uzayda tuvaletimi yaparken zorlan\u0131yorum. Bir \xE7\xF6z\xFCm\xFC
     var m\u0131d\u0131r?"
   thanksString: "Oh \xE7ok rahatladim."

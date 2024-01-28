@@ -7897,7 +7897,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: -0.1
+  m_BaseOffset: -0.05
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &3003554134115295856
@@ -7923,7 +7923,7 @@ MonoBehaviour:
   rotationBehaviour: {fileID: 0}
   objectActivator: {fileID: 3062560378535763405}
   pissbehaviour: {fileID: 0}
-  requiredItemType: 1
+  requiredItemType: 0
   story: "Doktor yard\u0131m et elim \xE7aydanl\u0131\u011Fa s\u0131k\u0131\u015Ft\u0131!"
   thanksString: "Simdi tamamlanm\u0131\u015F hissediyorum."
   state: 0

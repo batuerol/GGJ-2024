@@ -4736,7 +4736,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 5ca8df82ba2b05d4db35361646a78809, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -4763,7 +4763,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: -0.1
+  m_BaseOffset: -0.05
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &1398152317424112104
@@ -4789,7 +4789,7 @@ MonoBehaviour:
   rotationBehaviour: {fileID: 0}
   objectActivator: {fileID: 8720776520732032716}
   pissbehaviour: {fileID: 0}
-  requiredItemType: 3
+  requiredItemType: 0
   story: "Doktor bey \xE7ocu\u011Fum olmuyor, her \u015Feyi denedik olmad\u0131,
     gitmedi\u011Fimiz yer kalmad\u0131 bla bla bla ..........."
   thanksString: "Hayalim ger\xE7ek oldu!"
